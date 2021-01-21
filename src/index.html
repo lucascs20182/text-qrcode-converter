@@ -13,7 +13,7 @@
             <div>
                 <input type="text" size="30"
                     placeholder="Digite o texto para gerar o QR Code"
-                    :value="text" @input="onData" />
+                    v-model="text" />
             </div>
 
             <div v-if="text" class="output">
@@ -33,11 +33,6 @@
                         this.qrcode.value = this.text
 
                         return this.qrcode.toDataURL()
-                    }
-                },
-                methods: {
-                    onData(event) {
-                        this.text = event.target.value
                     }
                 }
             })
